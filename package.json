@@ -14,6 +14,9 @@
   },
   "main": "src/index.js",
   "keywords": [
+    "blear",
+    "utils",
+    "lang",
     "cloudcome",
     "ydr.me"
   ],
@@ -32,13 +35,7 @@
     "url": "https://github.com/blearjs/blear.utils.lang/issues"
   },
   "dependencies": {},
-  "peerDependencies": {
-    "blear.utils.typeis": "1.x",
-    "blear.utils.uri": "1.x",
-    "blear.utils.object": "1.x",
-    "blear.utils.string": "1.x",
-    "blear.utils.array": "1.x"
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
