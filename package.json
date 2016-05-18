@@ -1,7 +1,7 @@
 {
   "name": "blear.utils.lang",
   "version": "1.0.0",
-  "description": "浏览器兼容性",
+  "description": "语言验证",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
     "test": "node ./node_modules/.bin/karma start --single-run --browsers PhantomJS --reporters progress"
