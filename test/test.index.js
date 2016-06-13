@@ -49,6 +49,8 @@ describe('index.js', function () {
         expect(lang.isNumber('-0.10000')).toBe(false);
         expect(lang.isNumber('-0000.1')).toBe(false);
         expect(lang.isNumber('1.5.11')).toBe(false);
+        expect(lang.isNumber('1.303')).toBe(true);
+        expect(lang.isNumber('1.313')).toBe(true);
         done();
     });
 
