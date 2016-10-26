@@ -51,6 +51,12 @@ describe('index.js', function () {
         expect(lang.isNumber('1.5.11')).toBe(false);
         expect(lang.isNumber('1.303')).toBe(true);
         expect(lang.isNumber('1.313')).toBe(true);
+        expect(lang.isNumber('1e+1')).toBe(true);
+        expect(lang.isNumber('1.1e+1')).toBe(true);
+        expect(lang.isNumber('1e1')).toBe(true);
+        expect(lang.isNumber('1.1e1')).toBe(true);
+        expect(lang.isNumber('1e-12')).toBe(true);
+        expect(lang.isNumber('1.1e-12')).toBe(true);
         done();
     });
 
