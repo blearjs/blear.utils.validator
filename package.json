@@ -1,6 +1,6 @@
 {
   "name": "blear.utils.validator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "验证器",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
@@ -27,13 +27,13 @@
     "url": "http://ydr.me"
   },
   "contributors": [],
-  "homepage": "https://github.com/blearjs/blear.utils.lang",
+  "homepage": "https://github.com/blearjs/blear.utils.validator",
   "repository": {
     "type": "git",
-    "url": "https://github.com/blearjs/blear.utils.lang"
+    "url": "https://github.com/blearjs/blear.utils.validator"
   },
   "bugs": {
-    "url": "https://github.com/blearjs/blear.utils.lang/issues"
+    "url": "https://github.com/blearjs/blear.utils.validator/issues"
   },
   "dependencies": {},
   "peerDependencies": {},
