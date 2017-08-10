@@ -1,6 +1,6 @@
 {
   "name": "blear.utils.validator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "验证器",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
