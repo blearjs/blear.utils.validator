@@ -122,13 +122,19 @@ describe('index.js', function () {
         done();
     });
 
-    it('.isIDCard', function (done) {
-        expect(validator.isIDCard(''.concat('341341', '1999', '01','01', '0000'))).toBe(true);
-        expect(validator.isIDCard(''.concat('341341', '1999', '01','01', '000x'))).toBe(true);
-        expect(validator.isIDCard(''.concat('341341', '1999', '01','01', '000X'))).toBe(true);
-        expect(validator.isIDCard(''.concat('341341', '1199', '01','01', '0000'))).toBe(false);
-        expect(validator.isIDCard(''.concat('341341', '1999', '21','01', '0000'))).toBe(false);
-        expect(validator.isIDCard(''.concat('341341', '1999', '11','12', '00xx'))).toBe(false);
+    it('.isIdNo', function (done) {
+        // http://id.8684.cn/
+        expect(validator.isIdNo('350213197706189461')).toBe(true);
+        expect(validator.isIdNo('350213197706189462')).toBe(false);
+        expect(validator.isIdNo('231281197609171710')).toBe(true);
+        expect(validator.isIdNo('231281197609171711')).toBe(false);
+        expect(validator.isIdNo('522328198407286657')).toBe(true);
+        expect(validator.isIdNo('522328198407286658')).toBe(false);
+        expect(validator.isIdNo('61072619840912946X')).toBe(true);
+        expect(validator.isIdNo('610726198409129461')).toBe(false);
+        expect(validator.isIdNo('130527197909158087')).toBe(true);
+        expect(validator.isIdNo('130527197909158088')).toBe(false);
+        expect(validator.isIdNo('130527197919158087')).toBe(false);
         done();
     });
 });
