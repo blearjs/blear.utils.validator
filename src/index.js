@@ -13,12 +13,13 @@ var reEmail = /^\w+[-+.\w]*@([a-z\d-]+\.)+[a-z]{2,5}$/i;
  * 18段：180、181、182、183、184、185、186、187、188、189
  * 19段：198、199
  */
-var reMobile = /^(13[0-9]|14[57]|15[012356789]|166|17[035678]|18[0-9]|19[89])\d{8}$/;
-var reIP = /^(?:(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$/;
-var reNumber = /^-?([1-9]\d*|0)(\.(\d*[1-9]|0))?(e[+-]?\d+)?$/i;
-var reInteger = /^-?([1-9]\d*|0)$/;
-var reUnstandardZero = /^-?0\.0$/;
-var reIDCard = /^(\d{6})(18|19|20)\d{2}[01]\d[0123]\d{4}(\d|x)$/i;
+var mobileRE = /^(13[0-9]|14[57]|15[012356789]|166|17[035678]|18[0-9]|19[89])\d{8}$/;
+var ipRE = /^(?:(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$/;
+var numberRE = /^-?([1-9]\d*|0)(\.(\d*[1-9]|0))?(e[+-]?\d+)?$/i;
+var integerRE = /^-?([1-9]\d*|0)$/;
+var unstandardZeroRE = /^-?0\.0$/;
+//
+var idNoRE = /^(\d{6})(18|19|20)\d{2}[01]\d[0123]\d{4}(\d|x)$/i;
 
 
 /**
@@ -68,7 +69,7 @@ exports.isEmail = buildValidator(reEmail);
  * @param str {*}
  * @returns {boolean}
  */
-exports.isMobile = buildValidator(reMobile);
+exports.isMobile = buildValidator(mobileRE);
 
 
 /**
@@ -76,7 +77,7 @@ exports.isMobile = buildValidator(reMobile);
  * @param str {*}
  * @returns {boolean}
  */
-exports.isIP = buildValidator(reIP);
+exports.isIP = buildValidator(ipRE);
 
 
 /**
@@ -87,7 +88,7 @@ exports.isIP = buildValidator(reIP);
  */
 exports.isNumber = function (str) {
     str = stringif(str);
-    return reNumber.test(str) && !reUnstandardZero.test(str);
+    return numberRE.test(str) && !unstandardZeroRE.test(str);
 };
 
 
@@ -97,7 +98,7 @@ exports.isNumber = function (str) {
  * @param str {*}
  * @returns {boolean}
  */
-exports.isInteger = buildValidator(reInteger);
+exports.isInteger = buildValidator(integerRE);
 
 
 /**
@@ -106,4 +107,4 @@ exports.isInteger = buildValidator(reInteger);
  * @param str {*}
  * @returns {boolean}
  */
-exports.isIDCard =  buildValidator(reIDCard);
+exports.isIdNo = buildValidator(idNoRE);
