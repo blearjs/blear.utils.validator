@@ -55,7 +55,7 @@ describe('index.js', function () {
         expect(validator.isMobile('16612345678')).toBe(true);
 
         expect(validator.isMobile('17012345678')).toBe(true);
-        expect(validator.isMobile('17112345678')).toBe(false);
+        expect(validator.isMobile('17112345678')).toBe(true);
         expect(validator.isMobile('17212345678')).toBe(false);
         expect(validator.isMobile('17312345678')).toBe(true);
         expect(validator.isMobile('17412345678')).toBe(false);
