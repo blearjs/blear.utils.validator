@@ -90,25 +90,35 @@ describe('index.js', function () {
     });
 
     it('.isNumber', function (done) {
-        expect(validator.isNumber()).toBe(false);
-        expect(validator.isNumber('11.11')).toBe(true);
-        expect(validator.isNumber('11')).toBe(true);
-        expect(validator.isNumber('-1')).toBe(true);
-        expect(validator.isNumber('-1.1')).toBe(true);
-        expect(validator.isNumber('-0.1')).toBe(true);
-        expect(validator.isNumber('-0.0')).toBe(false);
-        expect(validator.isNumber('-0.10000')).toBe(false);
-        expect(validator.isNumber('-0000.1')).toBe(false);
-        expect(validator.isNumber('1.5.11')).toBe(false);
-        expect(validator.isNumber('1.303')).toBe(true);
-        expect(validator.isNumber('1.313')).toBe(true);
-        expect(validator.isNumber('1e+1')).toBe(true);
-        expect(validator.isNumber('1.1e+1')).toBe(true);
-        expect(validator.isNumber('1e1')).toBe(true);
-        expect(validator.isNumber('1.1e1')).toBe(true);
-        expect(validator.isNumber('1e-12')).toBe(true);
-        expect(validator.isNumber('1.1e-12')).toBe(true);
+        expect(validator.isNumerical()).toBe(false);
+        expect(validator.isNumerical('11.11')).toBe(true);
+        expect(validator.isNumerical('11')).toBe(true);
+        expect(validator.isNumerical('-1')).toBe(true);
+        expect(validator.isNumerical('-1.1')).toBe(true);
+        expect(validator.isNumerical('-0.1')).toBe(true);
+        expect(validator.isNumerical('-0.0')).toBe(false);
+        expect(validator.isNumerical('-0.10000')).toBe(false);
+        expect(validator.isNumerical('-0000.1')).toBe(false);
+        expect(validator.isNumerical('1.5.11')).toBe(false);
+        expect(validator.isNumerical('1.303')).toBe(true);
+        expect(validator.isNumerical('1.313')).toBe(true);
+        expect(validator.isNumerical('1e+1')).toBe(true);
+        expect(validator.isNumerical('1.1e+1')).toBe(true);
+        expect(validator.isNumerical('1e1')).toBe(true);
+        expect(validator.isNumerical('1.1e1')).toBe(true);
+        expect(validator.isNumerical('1e-12')).toBe(true);
+        expect(validator.isNumerical('1.1e-12')).toBe(true);
         done();
+    });
+
+    it('.isDigital', function () {
+        expect(validator.isDigital('0')).toBe(true);
+        expect(validator.isDigital('01')).toBe(true);
+        expect(validator.isDigital('10')).toBe(true);
+        expect(validator.isDigital('012')).toBe(true);
+        expect(validator.isDigital('-')).toBe(false);
+        expect(validator.isDigital('-0')).toBe(false);
+        expect(validator.isDigital('0-')).toBe(false);
     });
 
     it('.isInteger', function (done) {
