@@ -15,7 +15,7 @@ var emailRE = /^\w+[-+.\w]*@([a-z\d-]+\.)+[a-z]{2,5}$/i;
  */
 var mobileRE = /^(13[0-9]|14[57]|15[012356789]|166|17[0135678]|18[0-9]|19[89])\d{8}$/;
 var ipRE = /^(?:(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$/;
-var numberRE = /^-?([1-9]\d*|0)(\.(\d*[1-9]|0))?(e[+-]?\d+)?$/i;
+var numericalRE = /^-?([1-9]\d*|0)(\.(\d*[1-9]|0))?(e[+-]?\d+)?$/i;
 var integerRE = /^-?([1-9]\d*|0)$/;
 var unstandardZeroRE = /^-?0\.0$/;
 // http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/
@@ -91,14 +91,14 @@ exports.isIP = buildValidator(ipRE);
 
 
 /**
- * 判断是否为 number 格式
+ * 判断是否为数值（numerical）格式
  * @type {Function}
  * @param str {*}
  * @returns {boolean}
  */
-exports.isNumber = function (str) {
+exports.isNumerical = function (str) {
     str = stringif(str);
-    return numberRE.test(str) && !unstandardZeroRE.test(str);
+    return numericalRE.test(str) && !unstandardZeroRE.test(str);
 };
 
 
