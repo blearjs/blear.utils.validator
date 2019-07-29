@@ -13,7 +13,7 @@ describe('index.js', function () {
     it('.isHTTP', function (done) {
         expect(validator.isHTTP()).toBe(false);
         expect(validator.isHTTP('http://aba.com')).toBe(true);
-        expect(validator.isHTTP('http://aba.com/\'1@!.+%a?a')).toBe(true);
+        expect(validator.isHTTP('http://aba.com/\'1@!.+%a?a(x)')).toBe(true);
         done();
     });
 
